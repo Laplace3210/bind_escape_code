@@ -2,7 +2,6 @@
 # The role of receptor binding and immunity in SARS-CoV-2 fitness landscape: a modeling study
 
 **DOI:** [https://doi.org/10.1101/2024.10.24.24316028](https://doi.org/10.1101/2024.10.24.24316028)
-**DOI:** [https://doi.org/10.1101/2024.10.24.24316028](https://doi.org/10.1101/2024.10.24.24316028)
 
 ## Paper Authors
 
