@@ -99,9 +99,5 @@ This script computes weekly prevalence of selected RBD mutations from SARS-CoV-2
   title={Impact of human mobility and weather conditions on Dengue mosquito abundance during the COVID-19 pandemic in Hong Kong},
   author={Ding, Zhaojun and Yuan, Hsiang-Yu},
   journal={medRxiv},
-  volume={未知},
-  number={未知},
-  pages={未知--未知},
   year={2025},
-  publisher={Cell Press}
 }
