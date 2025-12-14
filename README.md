@@ -48,21 +48,22 @@ Recommended patch
 At the top of both scripts/data_used.R and scripts/Figure2.R, add:
 
 # ---- path config ----
+```r
 ROOT_DIR <- getwd()
 DATA_DIR <- file.path(ROOT_DIR, "data", "input")
 OUT_DIR  <- file.path(ROOT_DIR, "results", "figure2")
 dir.create(OUT_DIR, recursive = TRUE, showWarnings = FALSE)
-
+```
 
 Then replace all read.csv("D:/.../xxx.csv") with:
-
+```r
 read.csv(file.path(DATA_DIR, "xxx.csv"))
-
+```
 
 And in Figure2.R, replace the old source("D:/.../data_uesd.R") with:
-
+```r
 source(file.path(ROOT_DIR, "scripts", "data_used.R"))
-
+```
 
 Finally, update the output path in ggsave() to:
 
@@ -96,6 +97,9 @@ install.packages(c(
 
 
 ## Figure3:
+**Figure_3_updated.R: VOC prevalence, binding/escape score (calculated from deep mutational scanning data at RBG sites)**  
+(A) Variant prevalence over time. The bar chart shows the prevalence of different SARS-CoV-2 VOC (alpha, beta, delta, gamma, and omicron strains) from early 2020 through early 2022. (B) Additive binding scores of viral lineages under different VOC backgrounds. The value in parentheses after each VOC denotes the mean ACE2 binding scores. (C) The immune escape scores over time. Scatter plot showing ACE2 binding and alpha, delta, and omicron variant immune escape across the timeline. BA.1* and BA.2* including BA.1, BA.2 and their sub-lineages. BA.1# means BA.1* without BA.1 and BA.1.1. BA.2# means BA.2* without BA.2..
+
 ### Data: Variants of Concern (VOCs)
 **Alpha_Italy_bind_esc_socre1.csv**  
 **Beta_Italy_bind_esc_socre1.csv**  
