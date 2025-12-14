@@ -28,7 +28,7 @@ https://covid19.apple.com/mobility
 •	All original code has been deposited at github at https://github.com/DING219/bind_escape_code and is publicly available as of the date of publication.  
 •	Any additional information required to reanalyze the data reported in this paper is available from the lead contact upon request.  
 
-## Source cCode in Each Folder
+## Source Code in Each Folder
 
 ## Figure 1:
 **Study flow and model design** 
