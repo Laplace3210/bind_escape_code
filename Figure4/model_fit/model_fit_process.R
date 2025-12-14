@@ -1,28 +1,3 @@
-# 
-# # devtools::install_github("mrc-ide/odin@v1.4.4")
-# devtools::install_github("mrc-ide/mcstate@v0.9.11")
-# # devtools::install_github("mrc-ide/odin.dust@v0.2.12")
-# # 
-# options(repos = c(CRAN = "https://cloud.r-project.org/",
-#                   ncov = "https://ncov-ic.github.io/drat/"))
-# install.packages("dust",version='0.11.32')
-# # 
-# options(repos = c(CRAN = "https://cloud.r-project.org/",
-#                   ncov = "https://ncov-ic.github.io/drat/"))
-# install.packages(c("dust", "mcstate"),force = T)
-# 
-# library(devtools)
-# 
-# 
-# 
-# options(repos = c(CRAN = "https://cloud.r-project.org/", 
-#                   ncov = "https://ncov-ic.github.io/drat/"))
-# install.packages("odin.dust",force = T)
-# 
-# install_version("odin", version = "1.4.4",force = T)
-# install_version("odin.dust", version = "0.2.12",force = T)
-# install_version("dust", version = "0.11.32",force = T)
-# install_version("mcstate", version='0.9.11',force = T)
 
 source("D:/all_project/Italy_project/0_data_process/input/data_uesd.R")
 
@@ -187,6 +162,7 @@ axis(1, at = date_index,labels = Italy_reported_cases[1:744,]$date[date_index], 
 axis(2, at = seq(0,250000, by = 50000),labels = seq(0,250, by = 50), las = 2, cex.axis = 1.2)
 abline(v=date_index,lty=2,col="lightgray")
 abline(h=seq(0,250000, by = 50000),lty=2,col="lightgray")
+
 
 
 
