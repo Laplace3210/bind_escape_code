@@ -63,13 +63,13 @@ source(file.path(ROOT_DIR, "scripts", "data_used.R"))
 ```
 
 Finally, update the output path in ggsave() to:
-
+```r
 ggsave(
   figure_2A_2B_2C,
   file = file.path(OUT_DIR, "figure_2A_2B_2C.pdf"),
   width = 8, height = 11.5
 )
-
+```
 ## Contents 
 - `Figure2/data_used.R`: load and preprocess input datasets (cases, mobility, vaccination-related inputs).
 - `Figure2/Figure2.R`: generate Figure 2 panels and export the final PDF.
