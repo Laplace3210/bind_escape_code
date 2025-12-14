@@ -30,7 +30,7 @@ https://covid19.apple.com/mobility
 
 ## Source cCode in Each Folder
 
-## Figure1:
+## Figure 1:
 **Study flow and model design** 
 (A) Schematic showing the extended SEIR model integrating multiple data sources to estimate the SARS-CoV-2 fitness landscape. Data inputs include mobility, immune escape, and vaccination coverage data.
 These data feed into the extended SEIR model, which was calibrated using reported case data. The model outputs include virus fitness combined with ACE2 binding data and effective immunity, and show how these
@@ -38,8 +38,8 @@ factors shape virus evolution patterns. (B) Detailed structure of the SEIR compa
 susceptible (S), exposed (E), infectious (I), reported infectious cases (IR) and recovered (R) states, with an emphasis on the impact of vaccination doses on these dynamics. S𝑖, E𝑖, I𝑖, IR𝑖 and R𝑖 subscripts denote 295 compartments with different vaccine doses.Figure1.pptx:Research Scheme**  
 This figure was producted in the MS Power Point. No code was used to generate it.
 
-## Figure2:
-**Figure_2.R: Vaccination data, mobility index, log incidence data, time series plots**  
+## Figure 2:
+**Figure2.R: Vaccination data, mobility index, log incidence data, time series plots**  
 This script compiles and harmonizes Italian COVID-19 vaccination, mobility, and case data from 2020–2022. Vaccination records are cleaned, filtered, grouped by dose type, and aggregated into a complete daily time series. Mobility data are aligned to the same period, and case data are corrected, cumulatively summed, and log-transformed. Key VOC periods are annotated using fixed date cutoffs. The script generates publication-quality figures for vaccine coverage, mobility trends, and daily/cumulative incidence, and exports them as high-resolution TIFF files.
 ##
 
@@ -102,7 +102,7 @@ install.packages(c(
 
 Run order:
 Place all required input files in the locations expected by the script (configure paths if needed).
-Run: Figure_3_updated.R
+Run: `Figure_3_updated.R`
 
 Output:
 The script generates the multi-panel Figure 3 (VOC prevalence + binding/escape score). 
