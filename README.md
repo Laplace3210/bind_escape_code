@@ -100,23 +100,13 @@ install.packages(c(
 **Figure_3_updated.R: VOC prevalence, binding/escape score (calculated from deep mutational scanning data at RBG sites)**  
 (A) Variant prevalence over time. The bar chart shows the prevalence of different SARS-CoV-2 VOC (alpha, beta, delta, gamma, and omicron strains) from early 2020 through early 2022. (B) Additive binding scores of viral lineages under different VOC backgrounds. The value in parentheses after each VOC denotes the mean ACE2 binding scores. (C) The immune escape scores over time. Scatter plot showing ACE2 binding and alpha, delta, and omicron variant immune escape across the timeline. BA.1* and BA.2* including BA.1, BA.2 and their sub-lineages. BA.1# means BA.1* without BA.1 and BA.1.1. BA.2# means BA.2* without BA.2..
 
-### Data: Variants of Concern (VOCs)
-**Alpha_Italy_bind_esc_socre1.csv**  
-**Beta_Italy_bind_esc_socre1.csv**  
-**Delta_Italy_bind_esc_socre1.csv未上传**  
-**Gamma_Italy_bind_esc_socre1.csv**  
-**Omicron_Italy_bind_esc_socre1.csv**  
-### Data: 未定义
-**Italy_alg.rds**  
-**Non_voc_Italy_bind_esc_socre1.csv**  
-**Omicron_accession_ID.zip**  
-**RBD_deep_scan_data.csv**  
-**imm_eascape.csv**  
+Run order:
+Place all required input files in the locations expected by the script (configure paths if needed).
+Run: Figure_3_updated.R
 
-### Code: 
-**Figure_3_updated.R: binding/escape score, mutation rate, deep mutational scanning at RBG sites**  
-This script compiles SARS-CoV-2 variant data to generate a multi-panel figure characterizing the temporal dynamics and functional properties of major VOCs and Omicron sublineages in Italy. Binding and immune-escape scores are imported for Alpha, Beta, Gamma, Delta, and Omicron, merged with lineage-specific accession IDs, filtered, and aggregated into weekly mean trajectories (Panels 2A–2B). A logistic model is fitted to quantify the association between binding affinity and immune escape (Panel 2C). Monthly sequence counts are used to reconstruct time-varying VOC prevalence (Panel 2D). Deep mutational scanning data are integrated to summarize binding and escape effects at key RBD sites (Panel 2E), and mutation-frequency heatmaps are generated for Alpha, Delta, BA.1*, and BA.2* (Panel 2F).
-
+Output:
+The script generates the multi-panel Figure 3 (VOC prevalence + binding/escape score). 
+Output files are written to the script’s configured output directory (see the path/output settings inside the script).
 
 ## Figure4:
 ### Data: 未定义，res?
