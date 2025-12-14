@@ -11,7 +11,7 @@ Zhaojun, Ding, Hsiang-Yu Yuan
 
 In this study, we aimed to assess the impact of RBD mutations on virus fitness that is associated with ACE2 receptor binding using data from Italy, a country with high viral incidence rates and high vaccine coverage. To disentangle intervention effects (i.e. vaccinations and non-pharmaceutical interventions (NPIs)) on virus fitness, we incorporated mobility and vaccination data in an infectious disease transmission model to calibrate fitness estimates. From simulated results, and for the first time, we constructed a fitness landscape after mapping the virus's evolutionary trajectory traits (i.e. receptor binding and immune escape) over different periods across different immunity levels.
 
-## Data Description
+## Data Used in This Study
 ### Daily reported COVID-19 cases in Italy
 https://github.com/owid/covid-19-data/tree/master/public/data  
 ### Deep mutational scanning data for ACE2 binding
