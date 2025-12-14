@@ -123,7 +123,7 @@ What will get: the Figure 4 panels (fitness results, effective reproduction numb
 Inputs (already provided in Figure4/):
 `beta_v_res_updated.csv`, `effective_immunity_res.csv`, `population_immunity_res_updated.csv`, `model_fit_res.csv`.
 
-Model fitting part:
+**Model fitting part:**
 Re-run the model fitting pipeline (folder `Figure4/model_fit/`)
 This is only needed if you want to refit the model instead of using the provided `.csv` results.
 
