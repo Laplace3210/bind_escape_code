@@ -139,7 +139,10 @@ source("Figure4/model_fit/model_fit_process.R")
 
 `SEIARD.R` defines the SEIARD-type transmission model with time-varying inputs (mobility, recovery rate gamma_t, immune protection p_imm_*, immune escape score imm_score, and vaccine dose counts V1–V3). 
 
-`model_fit_process.R` compiles `SEIARD.R` via `odin.dust::odin_dust("SEIARD.R")`, builds a particle filter likelihood on cumulative cases, and fits parameters using particle MCMC (`mcstate::pmcmc`) with settings like `n_steps = 3000`, `burnin = 1000`, `n_particles = 800`, `n_chains = 10`. 
+`model_fit_process.R` compiles `SEIARD.R` via `odin.dust::odin_dust("SEIARD.R")`, builds a particle filter (pMCMC) likelihood on cumulative cases, and fits parameters using particle MCMC (`mcstate::pmcmc`) with settings like `n_steps = 3000`, `burnin = 1000` for shorter sampling time. 
+
+## Notes
+The pMCMC process will be time consuming and overwhelming for the computer cpu. Because the limmit calculation source in personal PC,  running 3000 samples on 5 to 10 Rstudio instances can complete over 100,000 samples in a relatively fast manner at the same time.
 
 ## Figure5:
 ### Code: 
