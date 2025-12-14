@@ -118,10 +118,10 @@ Run:
 source("Figure4/Figure_4.R")
 ```
 
-What will get: the Figure 4 panels (fitness results, effective reproduction number Re, and immunity levels) generated from the input .csv files in Figure4/. 
+What will get: the Figure 4 panels (fitness results, effective reproduction number Re, and immunity levels) generated from the input `.csv` files in `Figure4/`. 
 
 Inputs (already provided in Figure4/):
-beta_v_res_updated.csv, effective_immunity_res.csv, population_immunity_res_updated.csv, model_fit_res.csv.
+`beta_v_res_updated.csv`, `effective_immunity_res.csv`, `population_immunity_res_updated.csv`, `model_fit_res.csv`.
 
 Model fitting part:
 Re-run the model fitting pipeline (folder `Figure4/model_fit/`)
@@ -130,14 +130,14 @@ This is only needed if you want to refit the model instead of using the provided
 Run order:
 
 Prepare the input objects (cases, mobility, vaccine, escape, protection, etc.).
-In model_fit_process.R, the code currently loads them via a `source(".../data_uesd.R")` line—you must edit this path to your local file location (ideally a relative path inside the repo). 
+In `model_fit_process.R`, the code currently loads them via a `source(".../data_uesd.R")` line—you must edit this path to your local file location (ideally a relative path inside the repo). 
 
 In `Figure4/model_fit/`, run:
 ```r
 source("Figure4/model_fit/model_fit_process.R")
 ```
 
-`SEIARD.R` defines the SEIARD-type transmission model with time-varying inputs (mobility, recovery rate gamma_t, immune protection p_imm_*, immune escape score imm_score, and vaccine dose counts V1–V3). 
+`SEIARD.R` defines the SEIARD-type transmission model with time-varying inputs (mobility, recovery rate `gamma_t`, immune protection `p_imm_1/2/3`, immune escape score `imm_score`, and vaccine dose counts `V1–V3`). 
 
 `model_fit_process.R` compiles `SEIARD.R` via `odin.dust::odin_dust("SEIARD.R")`, builds a particle filter (pMCMC) likelihood on cumulative cases, and fits parameters using particle MCMC (`mcstate::pmcmc`) with settings like `n_steps = 3000`, `burnin = 1000` for shorter sampling time. 
 
