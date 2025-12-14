@@ -142,7 +142,7 @@ source("Figure4/model_fit/model_fit_process.R")
 `model_fit_process.R` compiles `SEIARD.R` via `odin.dust::odin_dust("SEIARD.R")`, builds a particle filter (pMCMC) likelihood on cumulative cases, and fits parameters using particle MCMC (`mcstate::pmcmc`) with settings like `n_steps = 3000`, `burnin = 1000` for shorter sampling time. 
 
 ## Notes
-The pMCMC process will be time consuming and overwhelming for the computer cpu. Because the limmit calculation source in personal PC,  running 3000 samples on 5 to 10 Rstudio instances can complete over 100,000 samples in a relatively fast manner at the same time.
+The pMCMC process will be time consuming and overwhelming for the computer cpu. Because the limmit calculation source in a personal PC, running 3000 samples on 5 to 10 Rstudio at the same time, can complete over 100,000 samples in a relatively fast manner.
 
 ## Figure5:
 ### Code: 
