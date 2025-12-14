@@ -31,15 +31,68 @@ https://covid19.apple.com/mobility
 ## Source cCode in Each Folder
 
 ## Figure1:
-**Figure1.pptx:Research Scheme**  
+**Study flow and model design** 
+(A) Schematic showing the extended SEIR model integrating multiple data sources to estimate the SARS-CoV-2 fitness landscape. Data inputs include mobility, immune escape, and vaccination coverage data.
+These data feed into the extended SEIR model, which was calibrated using reported case data. The model outputs include virus fitness combined with ACE2 binding data and effective immunity, and show how these
+factors shape virus evolution patterns. (B) Detailed structure of the SEIR compartment model. The model partitions the population based on vaccination status and infection stage, highlighting transitions between
+susceptible (S), exposed (E), infectious (I), reported infectious cases (IR) and recovered (R) states, with an emphasis on the impact of vaccination doses on these dynamics. S𝑖, E𝑖, I𝑖, IR𝑖 and R𝑖 subscripts denote 295 compartments with different vaccine doses.Figure1.pptx:Research Scheme**  
+This figure was producted in the MS Power Point. No code was used to generate it.
 
 ## Figure2:
-### Data: Vaccination status in Italy 2021-2023
-**somministrazioni-vaccini-summary-latest.csv**  
-
-### Code: 
 **Figure_2.R: Vaccination data, mobility index, log incidence data, time series plots**  
 This script compiles and harmonizes Italian COVID-19 vaccination, mobility, and case data from 2020–2022. Vaccination records are cleaned, filtered, grouped by dose type, and aggregated into a complete daily time series. Mobility data are aligned to the same period, and case data are corrected, cumulatively summed, and log-transformed. Key VOC periods are annotated using fixed date cutoffs. The script generates publication-quality figures for vaccine coverage, mobility trends, and daily/cumulative incidence, and exports them as high-resolution TIFF files.
+##
+
+Recommended patch
+
+At the top of both scripts/data_used.R and scripts/Figure2.R, add:
+
+# ---- path config ----
+ROOT_DIR <- getwd()
+DATA_DIR <- file.path(ROOT_DIR, "data", "input")
+OUT_DIR  <- file.path(ROOT_DIR, "results", "figure2")
+dir.create(OUT_DIR, recursive = TRUE, showWarnings = FALSE)
+
+
+Then replace all read.csv("D:/.../xxx.csv") with:
+
+read.csv(file.path(DATA_DIR, "xxx.csv"))
+
+
+And in Figure2.R, replace the old source("D:/.../data_uesd.R") with:
+
+source(file.path(ROOT_DIR, "scripts", "data_used.R"))
+
+
+Finally, update the output path in ggsave() to:
+
+ggsave(
+  figure_2A_2B_2C,
+  file = file.path(OUT_DIR, "figure_2A_2B_2C.pdf"),
+  width = 8, height = 11.5
+)
+
+## Contents 
+
+- `Figure2/data_used.R`: load and preprocess input datasets (cases, mobility, vaccination-related inputs).
+- `Figure2/Figure2.R`: generate Figure 2 panels and export the final PDF.
+
+> **Workflow**: `Figure2.R` depends on objects created in `data_used.R`.  
+> Recommended: run **only** `Figure2.R` (it will source `data_used.R` after you configure paths).
+
+## Requirements
+
+- R (recommended R >= 4.1)
+- Optional: RStudio
+
+Install required packages in R:
+
+```r
+install.packages(c(
+  "tidyverse","lubridate","patchwork","cowplot","ggrepel",
+  "scales","ggpubr","RColorBrewer","ggplot2"
+))
+```
 
 
 ## Figure3:
