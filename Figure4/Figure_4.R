@@ -18,7 +18,7 @@ beta_v_res_updated$date <- ymd(beta_v_res_updated$date)
 effective_immunity_res <- read.csv("D:/all_project/Italy_project/manuscript/figures/updated_figure3/effective_immunity_res.csv")
 effective_immunity_res$date <- ymd(effective_immunity_res$date)
 
-#beta_v_res$beta_v <- beta_v_res$beta_v*(1 - effective_immunity_res$eff_imm)
+
 population_immunity <- read.csv("D:/all_project/Italy_project/manuscript/figures/updated_figure3/population_immunity_res_updated.csv")
 population_immunity$date <- ymd(population_immunity$date)
 population_immunity_res <- data.frame(date = population_immunity$date, pop_imm_without_rec = population_immunity$aju_3,  pop_imm = population_immunity$aju_4 )
@@ -141,6 +141,7 @@ figure_3A_3B_3C_3D <- plot_grid(p1, p2, p3, p4, rel_heights = c(1, 1.4),scale = 
                                 labels = "AUTO",label_size = 20,  align = "hv", axis = "tb")
 #ggsave(figure_3A_3B_3C_3D, file='D:/all_project/Italy_project/manuscript/figures/updated_figure3/figure_3A_3B_3C_3D.pdf', width=15, height=10.5) 
 ggsave(figure_3A_3B_3C_3D, file='D:/all_project/Italy_project/manuscript/figures/updated_figure3/figure_3A_3B_3C_3D2_updated_10_10.tiff', width=16, height=11.5) 
+
 
 
 
