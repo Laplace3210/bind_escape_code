@@ -57,7 +57,7 @@ Then replace all read.csv("D:/.../xxx.csv") with:
 read.csv(file.path(DATA_DIR, "xxx.csv"))
 ```
 
-And in Figure2.R, replace the old source("D:/.../data_uesd.R") with:
+And in `Figure2.R`, replace the old `source("D:/.../data_uesd.R")` with:
 ```r
 source(file.path(ROOT_DIR, "scripts", "data_used.R"))
 ```
@@ -75,7 +75,7 @@ ggsave(
 - `Figure2/Figure2.R`: generate Figure 2 panels and export the final PDF.
 
 > **Workflow**: `Figure2.R` depends on objects created in `data_used.R`.  
-> Recommended: run **only** `Figure2.R` (it will source `data_used.R` after you configure paths).
+> Recommended: run only `Figure2.R` (it will source `data_used.R` after you configure paths).
 
 ## Requirements
 
