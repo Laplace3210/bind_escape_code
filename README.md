@@ -41,9 +41,6 @@ This figure was producted in the MS Power Point. No code was used to generate it
 ## Figure 2:
 **Figure2.R: Vaccination data, mobility index, log incidence data, time series plots**  
 This script compiles and harmonizes Italian COVID-19 vaccination, mobility, and case data from 2020–2022. Vaccination records are cleaned, filtered, grouped by dose type, and aggregated into a complete daily time series. Mobility data are aligned to the same period, and case data are corrected, cumulatively summed, and log-transformed. Key VOC periods are annotated using fixed date cutoffs. The script generates publication-quality figures for vaccine coverage, mobility trends, and daily/cumulative incidence, and exports them as high-resolution TIFF files.
-##
-
-Recommended patch
 
 At the top of both scripts/data_used.R and scripts/Figure2.R, add:
 
@@ -74,7 +71,6 @@ ggsave(
 )
 
 ## Contents 
-
 - `Figure2/data_used.R`: load and preprocess input datasets (cases, mobility, vaccination-related inputs).
 - `Figure2/Figure2.R`: generate Figure 2 panels and export the final PDF.
 
@@ -95,7 +91,6 @@ install.packages(c(
 ))
 ```
 
-
 ## Figure3:
 **Figure_3_updated.R: VOC prevalence, binding/escape score (calculated from deep mutational scanning data at RBG sites)**  
 (A) Variant prevalence over time. The bar chart shows the prevalence of different SARS-CoV-2 VOC (alpha, beta, delta, gamma, and omicron strains) from early 2020 through early 2022. (B) Additive binding scores of viral lineages under different VOC backgrounds. The value in parentheses after each VOC denotes the mean ACE2 binding scores. (C) The immune escape scores over time. Scatter plot showing ACE2 binding and alpha, delta, and omicron variant immune escape across the timeline. BA.1* and BA.2* including BA.1, BA.2 and their sub-lineages. BA.1# means BA.1* without BA.1 and BA.1.1. BA.2# means BA.2* without BA.2..
@@ -109,31 +104,48 @@ The script generates the multi-panel Figure 3 (VOC prevalence + binding/escape s
 Output files are written to the script’s configured output directory (see the path/output settings inside the script).
 
 ## Figure4:
-### Data: 未定义，res?
-**beta_v_res_updated.csv**  
-**effective_immunity_res.csv**  
-**population_immunity_res_updated.csv**  
-**model_fit_res.csv**  
-
-### Code: 
-**Figure_4.R: fitness results, effective reproduction number, immunity levels**  
 This script analyzes the temporal dynamics of COVID-19 transmission, viral fitness, and immunity in Italy. It uses daily reported cases and model fits to track transmission trends, assesses viral fitness through ACE2 binding and effective reproduction numbers (Re), and examines immunity levels within the population, both from natural immunity and vaccines. Additionally, it evaluates effective immunity against major VOCs over time, highlighting the impact of immunity on viral spread.
 
+Fastest way to reproduce Figure 4:
+
+Open an R session at the repo root (recommended), e.g.
+```r
+setwd("path/to/bind_escape_code")
+```
+
+Run:
+```r
+source("Figure4/Figure_4.R")
+```
+
+What will get: the Figure 4 panels (fitness results, effective reproduction number Re, and immunity levels) generated from the input .csv files in Figure4/. 
+
+Inputs (already provided in Figure4/):
+beta_v_res_updated.csv, effective_immunity_res.csv, population_immunity_res_updated.csv, model_fit_res.csv.
+
+Model fitting part:
+Re-run the model fitting pipeline (folder `Figure4/model_fit/`)
+This is only needed if you want to refit the model instead of using the provided `.csv` results.
+
+Run order:
+
+Prepare the input objects (cases, mobility, vaccine, escape, protection, etc.).
+In model_fit_process.R, the code currently loads them via a `source(".../data_uesd.R")` line—you must edit this path to your local file location (ideally a relative path inside the repo). 
+
+In `Figure4/model_fit/`, run:
+```r
+source("Figure4/model_fit/model_fit_process.R")
+```
+
+`SEIARD.R` defines the SEIARD-type transmission model with time-varying inputs (mobility, recovery rate gamma_t, immune protection p_imm_*, immune escape score imm_score, and vaccine dose counts V1–V3). 
+
+`model_fit_process.R` compiles `SEIARD.R` via `odin.dust::odin_dust("SEIARD.R")`, builds a particle filter likelihood on cumulative cases, and fits parameters using particle MCMC (`mcstate::pmcmc`) with settings like `n_steps = 3000`, `burnin = 1000`, `n_particles = 800`, `n_chains = 10`. 
 
 ## Figure5:
-### Data: 未定义
-**count_variant.csv**
-
 ### Code: 
-**Figure_5.R: linage, weekly mutation counts and subsets**
-This script computes weekly prevalence of selected RBD mutations from SARS-CoV-2 sequences and visualizes their time trends, highlighting VOC phases and key transition periods, including grouped mutation sets (Set1–Set3) and key mutations such as E484K, L452R, and T478K.
+**Figure5.R: linage, weekly mutation counts and subsets**
+This script computes weekly prevalence of selected RBD mutations from SARS-CoV-2 sequences and visualizes their time trends, highlighting VOC phases and key transition periods, including grouped mutation sets (Set1–Set3) and key mutations such as N501Y, L452R, and T478K.
 
-## pre_data_used
-### Data: 未定义
-**ajusted_protection_Italy.csv**  
-**ajusted_protection_Italy1.csv**  
-**ajusted_vac_Italy.csv**  
-**input.zip**  
 
 
 ## Notes
