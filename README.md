@@ -104,7 +104,7 @@ The script generates the multi-panel Figure 3 (VOC prevalence + binding/escape s
 Output files are written to the script’s configured output directory (see the path/output settings inside the script).
 
 ## Figure4:
-This script analyzes the temporal dynamics of COVID-19 transmission, viral fitness, and immunity in Italy. It uses daily reported cases and model fits to track transmission trends, assesses viral fitness through ACE2 binding and effective reproduction numbers (Re), and examines immunity levels within the population, both from natural immunity and vaccines. Additionally, it evaluates effective immunity against major VOCs over time, highlighting the impact of immunity on viral spread.
+This script plots the temporal dynamics of COVID-19 transmission, viral fitness, and immunity in Italy. It uses daily reported cases and model fits to track transmission trends, assesses viral fitness through ACE2 binding and effective reproduction numbers (Re), and examines immunity levels within the population, both from natural immunity and vaccines. Additionally, it shows effective immunity against major VOCs over time, highlighting the impact of immunity on viral spread.
 
 Fastest way to reproduce Figure 4:
 
