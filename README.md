@@ -5,7 +5,7 @@
 
 ## Authors ## 
 
-Zhaojun Ding(main developer) and Hsiang-Yu Yuan
+Zhaojun Ding (main developer) and Hsiang-Yu Yuan
 
 ## Research Aim
 
