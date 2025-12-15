@@ -128,7 +128,7 @@ source("Figure4/model_fit/model_fit_process.R")
 `model_fit_process.R` compiles `SEIRV.R` via `odin.dust::odin_dust("SEIRV.R")`, builds a particle filter (pMCMC) likelihood on cumulative cases. 
 
 **Tips:**
-- The pMCMC process is computationally intensive and places a heavy load on the CPU. Given the limited processing capacity of a personal computer, running ~3,000 samples across 5–10 concurrent RStudio sessions can yield more than 100,000 samples efficiently.
+- The pMCMC process is computationally intensive and places a heavy load on the CPU. Given the limited processing capacity of a personal computer, running ~3,000 samples across 5–10 concurrent RStudio sessions can yield the same number of total samples more efficiently.
 
 ## Figure5:
 This script computes weekly prevalence of selected RBD mutations from SARS-CoV-2 sequences and visualizes their time trends, highlighting VOC phases and key transition periods, including grouped mutation sets (Set1–Set3) and key mutations, such as N501Y, L452R, and T478K.
