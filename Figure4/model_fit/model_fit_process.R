@@ -1,7 +1,7 @@
 
 source("D:/all_project/Italy_project/0_data_process/input/data_uesd.R")
 
-gen_SEIARD <- odin.dust::odin_dust("SEIARD.R")
+gen_SEIARD <- odin.dust::odin_dust("SEIRV.R")
 
 
 dt <- 0.25
@@ -162,6 +162,7 @@ axis(1, at = date_index,labels = Italy_reported_cases[1:744,]$date[date_index], 
 axis(2, at = seq(0,250000, by = 50000),labels = seq(0,250, by = 50), las = 2, cex.axis = 1.2)
 abline(v=date_index,lty=2,col="lightgray")
 abline(h=seq(0,250000, by = 50000),lty=2,col="lightgray")
+
 
 
 
