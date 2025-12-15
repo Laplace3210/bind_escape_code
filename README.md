@@ -76,7 +76,8 @@ ggsave(
 - Workflow: `Figure2.R` depends on objects created in `data_used.R`.  
 - Recommended: run only `Figure2.R` (it will source `data_used.R` after you configure paths).
 
-**Notes:**/ 
+**Notes:**
+
 The vaccine data from Italy can be downloaded from the Commissario straordinario per l'emergenza Covid-19 (Italy) (link: https://github.com/italia/covid19-opendata-vaccini). The source data of the vaccine information were not provided here. 
 
 ## Figure3:
