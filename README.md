@@ -86,7 +86,7 @@ The vaccine data from Italy can be downloaded from the Commissario straordinario
 
 Usage:
 Place all required input files in the locations expected by the script (configure paths if needed).
-Run: `Figure_3_updated.R`
+Run: `Figure3.R`
 
 Output:
 The script generates the multi-panel Figure 3 (VOC prevalence + binding/escape score). 
