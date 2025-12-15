@@ -35,7 +35,7 @@ https://covid19.apple.com/mobility
 (A) Schematic showing the extended SEIR model integrating multiple data sources to estimate the SARS-CoV-2 fitness landscape. Data inputs include mobility, immune escape, and vaccination coverage data.
 These data feed into the extended SEIR model, which was calibrated using reported case data. The model outputs include virus fitness combined with ACE2 binding data and effective immunity, and show how these
 factors shape virus evolution patterns. (B) Detailed structure of the SEIR compartment model. The model partitions the population based on vaccination status and infection stage, highlighting transitions between
-susceptible (S), exposed (E), infectious (I), reported infectious cases (IR) and recovered (R) states, with an emphasis on the impact of vaccination doses on these dynamics. S𝑖, E𝑖, I𝑖, IR𝑖 and R𝑖 subscripts denote 295 compartments with different vaccine doses.Figure1.pptx:Research Scheme**  
+susceptible (S), exposed (E), infectious (I), reported infectious cases (IR) and recovered (R) states, with an emphasis on the impact of vaccination doses on these dynamics. S𝑖, E𝑖, I𝑖, IR𝑖 and R𝑖 subscripts denote 295 compartments with different vaccine doses.
 This figure was producted in the MS Power Point. No code was used to generate it.
 
 ## Figure 2:
