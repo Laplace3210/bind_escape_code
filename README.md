@@ -140,7 +140,7 @@ In `Figure4/model_fit/`, run:
 source("Figure4/model_fit/model_fit_process.R")
 ```
 
-`SEIARD.R` defines the SEIARD-type transmission model with time-varying inputs (mobility, recovery rate `gamma_t`, immune protection `p_imm_1/2/3`, immune escape score `imm_score`, and vaccine dose counts `V1–V3`). 
+`SEIARD.R` defines the SEIARD-type transmission model with time-varying inputs (mobility (`M`), recovery rate (`gamma_t`), immune protection (`p_imm_1/2/3`), immune escape score (`imm_score`), and vaccine dose counts (`V1–V3`)). 
 
 `model_fit_process.R` compiles `SEIARD.R` via `odin.dust::odin_dust("SEIARD.R")`, builds a particle filter (pMCMC) likelihood on cumulative cases, and fits parameters using particle MCMC (`mcstate::pmcmc`) with settings like `n_steps = 3000`, `burnin = 1000` for shorter sampling time. 
 
