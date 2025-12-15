@@ -3,9 +3,9 @@
 
 **DOI:** [https://doi.org/10.1101/2024.10.24.24316028](https://doi.org/10.1101/2024.10.24.24316028)
 
-## Paper Authors
+##Authors
 
-Zhaojun, Ding, Hsiang-Yu Yuan
+Zhaojun Ding (Mian developer), Hsiang-Yu Yuan
 
 ## Research Aim
 
@@ -30,21 +30,20 @@ https://covid19.apple.com/mobility
 
 ## Source Code in Each Folder
 
-## Figure 1:
+## Figure1:
 **Study flow and model design** 
 (A) Schematic showing the extended SEIR model integrating multiple data sources to estimate the SARS-CoV-2 fitness landscape. Data inputs include mobility, immune escape, and vaccination coverage data.
 These data feed into the extended SEIR model, which was calibrated using reported case data. The model outputs include virus fitness combined with ACE2 binding data and effective immunity, and show how these
 factors shape virus evolution patterns. (B) Detailed structure of the SEIR compartment model. The model partitions the population based on vaccination status and infection stage, highlighting transitions between
-susceptible (S), exposed (E), infectious (I), reported infectious cases (IR) and recovered (R) states, with an emphasis on the impact of vaccination doses on these dynamics. S𝑖, E𝑖, I𝑖, IR𝑖 and R𝑖 subscripts denote 295 compartments with different vaccine doses.
+susceptible (S), exposed (E), infectious (I), reported infectious cases (IR) and recovered (R) states, with an emphasis on the impact of vaccination doses on these dynamics. S𝑖, E𝑖, I𝑖, IR𝑖 and R𝑖 subscripts denote the compartments with different vaccine doses.
 This figure was producted in the MS Power Point. No code was used to generate it.
 
-## Figure 2:
+## Figure2:
 **Figure2.R: Vaccination data, mobility index, log incidence data, time series plots**  
 This script compiles and harmonizes Italian COVID-19 vaccination, mobility, and case data from 2020–2022. Vaccination records are cleaned, filtered, grouped by dose type, and aggregated into a complete daily time series. Mobility data are aligned to the same period, and case data are corrected, cumulatively summed, and log-transformed. Key VOC periods are annotated using fixed date cutoffs. The script generates publication-quality figures for vaccine coverage, mobility trends, and daily/cumulative incidence, and exports them as high-resolution TIFF files.
 
-At the top of both scripts/data_used.R and scripts/Figure2.R, add:
+At the top of both `data_used/data_used.R` and `Figure2/Figure2.R`, add the following lines for path configuration:
 
-# ---- path config ----
 ```r
 ROOT_DIR <- getwd()
 DATA_DIR <- file.path(ROOT_DIR, "data", "input")
@@ -52,17 +51,18 @@ OUT_DIR  <- file.path(ROOT_DIR, "results", "figure2")
 dir.create(OUT_DIR, recursive = TRUE, showWarnings = FALSE)
 ```
 
-Then replace all read.csv("D:/.../xxx.csv") with:
+Then, replace the filenames in the script used in:"
 ```r
 read.csv(file.path(DATA_DIR, "xxx.csv"))
 ```
 
-And in `Figure2.R`, replace the old `source("D:/.../data_uesd.R")` with:
+In `Figure2.R`, update the default file used in:
 ```r
 source(file.path(ROOT_DIR, "scripts", "data_used.R"))
 ```
 
-Finally, update the output path in ggsave() to:
+Finally, update the output path in `ggsave()`:
+
 ```r
 ggsave(
   figure_2A_2B_2C,
@@ -70,26 +70,11 @@ ggsave(
   width = 8, height = 11.5
 )
 ```
-## Contents 
-- `Figure2/data_used.R`: load and preprocess input datasets (cases, mobility, vaccination-related inputs).
+**Tips**
+- `Figure2.R` requires objects from `data_used.R`. When running `Figure2.R`, source `data_used.R` after configuring the paths.
 - `Figure2/Figure2.R`: generate Figure 2 panels and export the final PDF.
-
-> **Workflow**: `Figure2.R` depends on objects created in `data_used.R`.  
-> Recommended: run only `Figure2.R` (it will source `data_used.R` after you configure paths).
-
-## Requirements
-
-- R (recommended R >= 4.1)
-- Optional: RStudio
-
-Install required packages in R:
-
-```r
-install.packages(c(
-  "tidyverse","lubridate","patchwork","cowplot","ggrepel",
-  "scales","ggpubr","RColorBrewer","ggplot2"
-))
-```
+- Workflow: `Figure2.R` depends on objects created in `data_used.R`.  
+- Recommended: run only `Figure2.R` (it will source `data_used.R` after you configure paths).
 
 ## Notes
 The vaccine data from Italy can be downloaded from the Commissario straordinario per l'emergenza Covid-19 (Italy) (link: https://github.com/italia/covid19-opendata-vaccini). The source data of the vaccine information were not provided here. 
@@ -98,7 +83,7 @@ The vaccine data from Italy can be downloaded from the Commissario straordinario
 **Figure_3_updated.R: VOC prevalence, binding/escape score (calculated from deep mutational scanning data at RBG sites)**  
 (A) Variant prevalence over time. The bar chart shows the prevalence of different SARS-CoV-2 VOC (alpha, beta, delta, gamma, and omicron strains) from early 2020 through early 2022. (B) Additive binding scores of viral lineages under different VOC backgrounds. The value in parentheses after each VOC denotes the mean ACE2 binding scores. (C) The immune escape scores over time. Scatter plot showing ACE2 binding and alpha, delta, and omicron variant immune escape across the timeline. BA.1* and BA.2* including BA.1, BA.2 and their sub-lineages. BA.1# means BA.1* without BA.1 and BA.1.1. BA.2# means BA.2* without BA.2..
 
-Run order:
+Usage:
 Place all required input files in the locations expected by the script (configure paths if needed).
 Run: `Figure_3_updated.R`
 
@@ -121,19 +106,16 @@ Run:
 source("Figure4/Figure_4.R")
 ```
 
-What will get: the Figure 4 panels (fitness results, effective reproduction number Re, and immunity levels) generated from the input `.csv` files in `Figure4/`. 
-
-Inputs (already provided in Figure4/):
-`beta_v_res_updated.csv`, `effective_immunity_res.csv`, `population_immunity_res_updated.csv`, `model_fit_res.csv`.
+Output: the Figure 4 panels (fitness results, effective reproduction number Re, and immunity levels) generated from the input `.csv` files in `Figure4/`. 
 
 **Model fitting part:**
 Re-run the model fitting pipeline (folder `Figure4/model_fit/`)
 This is only needed if you want to refit the model instead of using the provided `.csv` results.
 
-Run order:
+Usage:
 
 Prepare the input objects (cases, mobility, vaccine, escape, protection, etc.).
-In `model_fit_process.R`, the code currently loads them via a `source(".../data_uesd.R")` line—you must edit this path to your local file location (ideally a relative path inside the repo). 
+In `model_fit_process.R`, the code currently loads them via a `source(".../data_uesd.R")` line. Edit this path to point to your local file location (ideally a relative path inside the repository). 
 
 In `Figure4/model_fit/`, run:
 ```r
@@ -144,23 +126,14 @@ source("Figure4/model_fit/model_fit_process.R")
 
 `model_fit_process.R` compiles `SEIARD.R` via `odin.dust::odin_dust("SEIARD.R")`, builds a particle filter (pMCMC) likelihood on cumulative cases, and fits parameters using particle MCMC (`mcstate::pmcmc`) with settings like `n_steps = 3000`, `burnin = 1000` for shorter sampling time. 
 
-## Notes
-The pMCMC process will be time consuming and overwhelming for the computer cpu. Because the limmit calculation source in a personal PC, running 3000 samples on 5 to 10 Rstudio at the same time, can complete over 100,000 samples in a relatively fast manner.
+**Tips**
+- The pMCMC process is computationally intensive and places a heavy load on the CPU. Given the limited processing capacity of a personal computer, running ~3,000 samples across 5–10 concurrent RStudio sessions can yield more than 100,000 samples efficiently.
 
 ## Figure5:
 This script computes weekly prevalence of selected RBD mutations from SARS-CoV-2 sequences and visualizes their time trends, highlighting VOC phases and key transition periods, including grouped mutation sets (Set1–Set3) and key mutations, such as N501Y, L452R, and T478K.
 
-
-
 ## Notes
 
-- Ensure all required R packages are installed before running the scripts.
-- Adjust file paths in the scripts to match your local directory structure if necessary.
+Ensure all required R packages are installed before running the scripts.
+Adjust file paths in the scripts to match your local directory structure if necessary.
 
-## Cite
-@article{ding2025the,
-  title={Impact of human mobility and weather conditions on Dengue mosquito abundance during the COVID-19 pandemic in Hong Kong},
-  author={Ding, Zhaojun and Yuan, Hsiang-Yu},
-  journal={medRxiv},
-  year={2025},
-}
