@@ -148,7 +148,7 @@ source("Figure4/model_fit/model_fit_process.R")
 The pMCMC process will be time consuming and overwhelming for the computer cpu. Because the limmit calculation source in a personal PC, running 3000 samples on 5 to 10 Rstudio at the same time, can complete over 100,000 samples in a relatively fast manner.
 
 ## Figure5:
-This script computes weekly prevalence of selected RBD mutations from SARS-CoV-2 sequences and visualizes their time trends, highlighting VOC phases and key transition periods, including grouped mutation sets (Set1–Set3) and key mutations such as N501Y, L452R, and T478K.
+This script computes weekly prevalence of selected RBD mutations from SARS-CoV-2 sequences and visualizes their time trends, highlighting VOC phases and key transition periods, including grouped mutation sets (Set1–Set3) and key mutations, such as N501Y, L452R, and T478K.
 
 
 
