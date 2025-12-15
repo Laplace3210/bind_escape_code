@@ -125,7 +125,7 @@ source("Figure4/model_fit/model_fit_process.R")
 
 `SEIRV.R` defines the SEIRV-type transmission model with time-varying inputs (mobility (`M`), recovery rate (`gamma_t`), immune protection (`p_imm_1/2/3`), immune escape score (`imm_score`), and vaccine dose counts (`V1–V3`)). 
 
-`model_fit_process.R` compiles `SEIRV.R` via `odin.dust::odin_dust("SEIRV.R")`, builds a particle filter (pMCMC) likelihood on cumulative cases, and fits parameters using particle MCMC (`mcstate::pmcmc`) with settings like `n_steps = 3000`, `burnin = 1000` for shorter sampling time. 
+`model_fit_process.R` compiles `SEIRV.R` via `odin.dust::odin_dust("SEIRV.R")`, builds a particle filter (pMCMC) likelihood on cumulative cases. 
 
 **Tips:**
 - The pMCMC process is computationally intensive and places a heavy load on the CPU. Given the limited processing capacity of a personal computer, running ~3,000 samples across 5–10 concurrent RStudio sessions can yield more than 100,000 samples efficiently.
