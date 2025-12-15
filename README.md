@@ -58,7 +58,7 @@ read.csv(file.path(DATA_DIR, "xxx.csv"))
 
 In `Figure2.R`, update the default file used in:
 ```r
-source(file.path(ROOT_DIR, "scripts", "data_used.R"))
+source(file.path(ROOT_DIR, "data_used", "data_used.R"))
 ```
 
 Finally, update the output path in `ggsave()`:
