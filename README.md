@@ -70,13 +70,13 @@ ggsave(
   width = 8, height = 11.5
 )
 ```
-**Tips**
+**Tips:**
 - `Figure2.R` requires objects from `data_used.R`. When running `Figure2.R`, source `data_used.R` after configuring the paths.
 - `Figure2/Figure2.R`: generate Figure 2 panels and export the final PDF.
 - Workflow: `Figure2.R` depends on objects created in `data_used.R`.  
 - Recommended: run only `Figure2.R` (it will source `data_used.R` after you configure paths).
 
-**Notes**
+**Notes:** 
 The vaccine data from Italy can be downloaded from the Commissario straordinario per l'emergenza Covid-19 (Italy) (link: https://github.com/italia/covid19-opendata-vaccini). The source data of the vaccine information were not provided here. 
 
 ## Figure3:
@@ -126,13 +126,13 @@ source("Figure4/model_fit/model_fit_process.R")
 
 `model_fit_process.R` compiles `SEIARD.R` via `odin.dust::odin_dust("SEIARD.R")`, builds a particle filter (pMCMC) likelihood on cumulative cases, and fits parameters using particle MCMC (`mcstate::pmcmc`) with settings like `n_steps = 3000`, `burnin = 1000` for shorter sampling time. 
 
-**Tips**
+**Tips:**
 - The pMCMC process is computationally intensive and places a heavy load on the CPU. Given the limited processing capacity of a personal computer, running ~3,000 samples across 5–10 concurrent RStudio sessions can yield more than 100,000 samples efficiently.
 
 ## Figure5:
 This script computes weekly prevalence of selected RBD mutations from SARS-CoV-2 sequences and visualizes their time trends, highlighting VOC phases and key transition periods, including grouped mutation sets (Set1–Set3) and key mutations, such as N501Y, L452R, and T478K.
 
-**Notes**
+**Notes:**
 
 Ensure all required R packages are installed before running the scripts.
 Adjust file paths in the scripts to match your local directory structure if necessary.
