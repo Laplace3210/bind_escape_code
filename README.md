@@ -92,7 +92,7 @@ install.packages(c(
 ```
 
 ## Notes
-To avoid potential copyright conflicts, the vaccine data from Italy can be downloaded from their official website (link: https://github.com/italia/covid19-opendata-vaccini). The source data of the vaccine information cannot be provided here. 
+To avoid potential copyright conflicts, the vaccine data from Italy can be downloaded from their official website (link: https://github.com/italia/covid19-opendata-vaccini). The source data of the vaccine information were not provided here. 
 
 ## Figure3:
 **Figure_3_updated.R: VOC prevalence, binding/escape score (calculated from deep mutational scanning data at RBG sites)**  
