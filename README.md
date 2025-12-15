@@ -1,11 +1,11 @@
 
 # The role of receptor binding and immunity in SARS-CoV-2 fitness landscape: a modeling study
 
-**DOI:** [https://doi.org/10.1101/2024.10.24.24316028](https://doi.org/10.1101/2024.10.24.24316028)
+
 
 ## Authors ## 
 
-Zhaojun Ding (Mian developer), Hsiang-Yu Yuan
+Zhaojun Ding (main developer) and Hsiang-Yu Yuan
 
 ## Research Aim
 
