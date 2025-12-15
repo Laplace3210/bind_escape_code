@@ -104,7 +104,7 @@ setwd("path/to/bind_escape_code")
 
 Run:
 ```r
-source("Figure4/Figure_4.R")
+source("Figure4/Figure4.R")
 ```
 
 Output: the Figure 4 panels (fitness results, effective reproduction number Re, and immunity levels) generated from the input `.csv` files in `Figure4/`. 
