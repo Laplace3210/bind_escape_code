@@ -76,7 +76,7 @@ ggsave(
 - Workflow: `Figure2.R` depends on objects created in `data_used.R`.  
 - Recommended: run only `Figure2.R` (it will source `data_used.R` after you configure paths).
 
-## Notes
+**Notes**
 The vaccine data from Italy can be downloaded from the Commissario straordinario per l'emergenza Covid-19 (Italy) (link: https://github.com/italia/covid19-opendata-vaccini). The source data of the vaccine information were not provided here. 
 
 ## Figure3:
@@ -132,7 +132,7 @@ source("Figure4/model_fit/model_fit_process.R")
 ## Figure5:
 This script computes weekly prevalence of selected RBD mutations from SARS-CoV-2 sequences and visualizes their time trends, highlighting VOC phases and key transition periods, including grouped mutation sets (Set1–Set3) and key mutations, such as N501Y, L452R, and T478K.
 
-## Notes
+**Notes**
 
 Ensure all required R packages are installed before running the scripts.
 Adjust file paths in the scripts to match your local directory structure if necessary.
