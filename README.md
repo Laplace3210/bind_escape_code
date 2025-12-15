@@ -25,7 +25,7 @@ https://www.google.com/covid19/mobility/
 ### Apple mobility data
 https://covid19.apple.com/mobility  
   
-•	All original code has been deposited at github at https://github.com/DING219/bind_escape_code and is publicly available as of the date of publication.  
+•	All original code has been deposited at github at https://github.com/Laplace3210/bind_escape_code and is publicly available as of the date of publication.  
 •	Any additional information required to reanalyze the data reported in this paper is available from the lead contact upon request.  
 
 ## Source Code in Each Folder
