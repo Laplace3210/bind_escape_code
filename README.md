@@ -95,7 +95,7 @@ Output files are written to the script’s configured output directory (see the 
 ## Figure4:
 This script plots the temporal dynamics of COVID-19 transmission, viral fitness, and immunity in Italy. It uses daily reported cases and model fits to track transmission trends, assesses viral fitness through ACE2 binding and effective reproduction numbers (Re), and shows immunity levels within the population, both from natural immunity and vaccines. Additionally, it shows effective immunity against major VOCs over time, highlighting the impact of immunity on viral spread.
 
-Fastest way to reproduce Figure 4:
+Simplest approach to reproduce Figure 4:
 
 Open an R session at the repo root (recommended), e.g.
 ```r
