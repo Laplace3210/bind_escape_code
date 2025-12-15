@@ -134,6 +134,7 @@ source("Figure4/model_fit/model_fit_process.R")
 This script computes weekly prevalence of selected RBD mutations from SARS-CoV-2 sequences and visualizes their time trends, highlighting VOC phases and key transition periods, including grouped mutation sets (Set1–Set3) and key mutations, such as N501Y, L452R, and T478K.
 
 **Notes:**
+
 Ensure all required R packages are installed before running the scripts.
 Adjust file paths in the scripts to match your local directory structure if necessary.
 
